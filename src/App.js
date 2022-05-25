@@ -1,11 +1,6 @@
 import React from 'react';
+import {Link , Outlet} from "react-router-dom"
 import './App.css';
-/* import Clock from './components/features/Clock/Clock';
-import { Friend } from './components/Friend/Friend';
-import Profile from './components/Profile/Profile';
-import  {Effect} from "./components/features/Effect/Effect"; */
-import { PickSearch } from './components/features/PickSearch/PickSearch';
-
  class App extends React.Component {
 
  
@@ -17,12 +12,21 @@ import { PickSearch } from './components/features/PickSearch/PickSearch';
   render() {
     return (
       <div className="App">
-        {/* <Profile printName={this.printName}/> */}
-        {/* <Clock /> */}
-        {/* <Friend src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Estadio_Mateo_Flores_Guatemala.JPG/1200px-Estadio_Mateo_Flores_Guatemala.JPG"/> */}
-        {/* <Effect /> */}
-        <PickSearch />
-      
+        
+        <div className='ui pointing menu'>
+          <div className='ui container'>
+            <Link to='/' className='item'><i className='home icon'></i>Home</Link>
+            <Link to="clock" className='item'> Clock App </Link>
+            <Link to="friend" className='item'> Friend App </Link>
+            <Link to="profile" className='item'> Profile App </Link>
+            <Link to="increment" className='item'> Increment App </Link>
+            <Link to="picksearch" className='item'> Pick Sear App </Link>
+          </div>
+        </div>
+      <div className='ui container'>
+        <h1>Select the app you want to use</h1>
+        <Outlet />
+      </div>
       </div>
     );
   }
