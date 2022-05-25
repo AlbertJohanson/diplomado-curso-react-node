@@ -17,28 +17,33 @@ class Profile extends React.Component {
       },
       pageTitle: "Welcome to my Personal Blog",
     };
-    this.changeTitle = this.ChangeTitle.bind(this);
+    this.changeTitle = this.changeTitle.bind(this);
+    this.changeJobTitle = this.changeJobTitle.bind(this);
+    this.addNewPage = this.addNewPage.bind(this);
   
   }
 
-  ChangeTitle (newPageTitle) {
+  changeTitle(newPageTitle) {
     this.setState({
-      pageTitle: newPageTitle,
-    });
-  };
+        pageTitle: newPageTitle
+    })
+}
 
-  changeJobTitle() {
-    this.setState( prevState => ({
-        info: {...prevState.info, job: 'Academik Instructor for React and Node Bootcamp'}
-    }))
-  }
+changeTitle(newPageTitle) {
+  this.setState({
+      pageTitle: newPageTitle
+  })
+}
 
-
- 
-
-AddNewPage() {
+changeJobTitle() {
   this.setState( prevState => ({
-      pages: [...prevState.pages, 'new page']
+      info: {...prevState.info, jobTitle: 'Academik Instructor for React and Node Bootcamp'}
+  }))
+}
+
+addNewPage() {
+  this.setState( prevState => ({
+      pages: [...prevState.pages, 'new Page']
   }))
 }
 
@@ -70,7 +75,7 @@ AddNewPage() {
         
 
           <div>
-            {/* <Button textButton='Change Job Title' onClick={this.ChangeTitle()}/> */}
+              <Button textButton="Change Title" onClick={this.changeTitle}/>
           </div>
 
         </div>
