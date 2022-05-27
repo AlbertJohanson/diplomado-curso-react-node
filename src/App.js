@@ -1,6 +1,8 @@
 import React from 'react';
 import {Link , Outlet} from "react-router-dom"
 import './App.css';
+import CharacterDetail from './components/CharacterDetail/CharacterDetail';
+import ChracterList from './components/CharacterList/ChracterList';
  class App extends React.Component {
 
  
@@ -12,8 +14,11 @@ import './App.css';
   render() {
     return (
       <div className="App">
-        
-        <div className='ui pointing menu'>
+        <ChracterList />
+        <div>
+          <CharacterDetail />
+        </div>
+        {/* <div className='ui pointing menu'>
           <div className='ui container'>
             <Link to='/' className='item'><i className='home icon'></i>Home</Link>
             <Link to="clock" className='item'> Clock App </Link>
@@ -26,7 +31,9 @@ import './App.css';
       <div className='ui container'>
         <h1>Select the app you want to use</h1>
         <Outlet />
-      </div>
+      </div> */}
+
+
       </div>
     );
   }
